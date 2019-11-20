@@ -93,6 +93,8 @@ remember to set the link for network connection if failed to visit websites afte
 
 >$ sudo ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
 
+>$ sudo apt-get install net-tools
+
 ***
 # remote access
 
