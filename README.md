@@ -226,6 +226,8 @@ may need to add ssh only if the system isn’t doing it for you automatically.
 
 >$ ssh-add ~/.ssh/id_rsa
 
+>$ cat ~/.ssh/id_rsa.pub
+
 install gitg for git and rapidsvn for svn
 
 >$ sudo apt-get install gitg rapidsvn meld
