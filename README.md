@@ -277,6 +277,20 @@ edit the startup program command as follow if running ros file before calling .b
 > gnome-terminal -x bash -c '~/catkin_ws/boot.sh'
 
 ***
+# python pip
+
+> sudo apt-get install synaptic
+
+install armadillo and vlc in synaptic
+
+> sudo apt-get install python-pip
+> sudo pip install python-vlc
+
+> sudo -H pip2 install --upgrade pip
+> sudo pip install GitPython
+
+
+***
 # upgrade linux kernel
 
 download [intel nuc wifi](https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-i-o/wireless-networking.html)
