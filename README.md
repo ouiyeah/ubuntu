@@ -284,9 +284,11 @@ edit the startup program command as follow if running ros file before calling .b
 install armadillo and vlc in synaptic
 
 > sudo apt-get install python-pip
+
 > sudo pip install python-vlc
 
 > sudo -H pip2 install --upgrade pip
+
 > sudo pip install GitPython
 
 
