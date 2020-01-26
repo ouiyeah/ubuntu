@@ -95,6 +95,10 @@ remember to set the link for network connection if failed to visit websites afte
 
 >$ sudo apt-get install net-tools
 
+>$ iwlist wlan0 scan | grep ESSID
+
+>$ sudo iw dev wlan0 scan | less
+
 ***
 # remote access
 
