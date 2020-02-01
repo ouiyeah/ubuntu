@@ -334,7 +334,11 @@ download headers, headers-generic, and image deb
 ***
 # systemback iso
 
+add apt-repository as ubuntu 14.04/16.04
 >$ sudo add-apt-repository ppa:nemh/systemback
+
+add apt-repository as ubuntu 18.04 or later
+>$ sudo add-apt-repository "deb http://ppa.launchpad.net/nemh/systemback/ubuntu xenial main"
 
 >$ sudo apt-get update && sudo apt-get install systemback unionfs-fuse
 
