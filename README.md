@@ -240,7 +240,7 @@ install gitg for git and rapidsvn for svn
 
 link git repository
 
->$ git clone https://github.com/hitrobotgroup/release
+>$ git clone https://github.com/ros-org/release
 
 >$ git clone git@github.com:ros-org/ros_org.git
 
