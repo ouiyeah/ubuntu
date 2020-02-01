@@ -199,7 +199,7 @@ lookup and bind the device id
 
 revise grub file in order to skip boot-in check if necessary
 
->$ sudo sed -i '177s/ ro / rw /' /etc/grub.d/10_linux
+>$ sudo sed -i '177s/ ro / rw /' /etc/grub.d/10_linux （replace 177=>184/188 for 18.04)
 
 >$ sudo update-grub
 
