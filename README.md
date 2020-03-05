@@ -295,6 +295,7 @@ install armadillo and vlc in synaptic
 
 > sudo pip install GitPython
 
+> python -m pip install --user spicy
 
 ***
 # upgrade linux kernel
