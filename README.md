@@ -36,6 +36,16 @@ fake a virtual monitor temperarily if gui program open failed
 
 retry gui program (e.g. rviz) and good luck
 
+add virtual monitors for ubuntu18.04
+
+>$ sudo vi /usr/share/X11/xorg.conf.d/20-intel.conf
+
+    Section "Device"
+        Identifier "intelgpu0"
+        Driver "intel"
+        Option "VirtualHeads" "2"
+    EndSection
+
 ***
 # configure network
 
