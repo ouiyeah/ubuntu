@@ -160,6 +160,12 @@ use scp to copy files between linux systems and use [pscp](https://raw.githubuse
 
 use [teamviewer](https://www.teamviewer.com/en/download/) to fulfill remote access worldwide
 
+reset unity if toolbar disappeared
+
+>$ dconf reset -f /org/compiz/
+
+>$ setsid unity
+
 ***
 # set permissions
 
