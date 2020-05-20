@@ -138,6 +138,20 @@ open dconf-editor and visit org > gnome > desktop > remote-access
 ![dconf_editor](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/dconf_editor.png "dconf_editor")
 uncheck the "requlre-encryption" attribute
 
+>$ sudo vi /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+
+····
+<key name='enabled' type='b'>
+  <summary>Enable remote access to the desktop</summary>
+  <description>
+    If true, allows remote access to the desktop via the RFB
+    protocol. Users on remote machines may then connect to the
+    desktop using a VNC viewer.
+  </description>
+  <default>false</default>
+</key>
+····
+
 set x11vnc for connecting odroid-ubuntu from windows
 
 >$ sudo apt-get install x11vnc
