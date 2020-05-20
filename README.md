@@ -140,7 +140,7 @@ uncheck the "requlre-encryption" attribute
 
 >$ sudo vi /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
 
-····
+````
 <key name='enabled' type='b'>
   <summary>Enable remote access to the desktop</summary>
   <description>
@@ -150,7 +150,11 @@ uncheck the "requlre-encryption" attribute
   </description>
   <default>false</default>
 </key>
-····
+````
+
+>$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+>$ /usr/lib/vino/vino-server
 
 set x11vnc for connecting odroid-ubuntu from windows
 
