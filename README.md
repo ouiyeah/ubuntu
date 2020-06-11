@@ -136,7 +136,7 @@ set vnc4server for connecting ubuntu from other system terminal (e.g. windows / 
 
 open dconf-editor and visit org > gnome > desktop > remote-access
 ![dconf_editor](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/dconf_editor.png "dconf_editor")
-uncheck the "requlre-encryption" attribute
+uncheck the "require-encryption" attribute
 
 >$ sudo vi /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
 
@@ -148,7 +148,7 @@ uncheck the "requlre-encryption" attribute
     protocol. Users on remote machines may then connect to the
     desktop using a VNC viewer.
   </description>
-  <default>false</default>
+  <default>true</default>
 </key>
 ````
 
