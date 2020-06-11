@@ -314,7 +314,7 @@ edit the startup program command as follow if running ros file before calling .b
 
 > gnome-terminal -x bash -c '~/catkin_ws/boot.sh'
 
-> gnome-terminal bash -- setsid /usr/lib/vino/vino-server
+> gnome-terminal -- setsid /usr/lib/vino/vino-server
 
 ***
 # python pip
