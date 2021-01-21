@@ -369,6 +369,23 @@ download headers, headers-generic, and image deb
     127.0.1.1       [hostname]
 
 ***
+# disk cleanup
+
+>$ sudo apt-get clean
+>$ journalctl --vacuum-size=10M
+
+```
+#!/bin/bash
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -eu
+snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        snap remove "$snapname" --revision="$revision"
+    done
+```
+
+***
 # systemback iso
 
 add apt-repository as ubuntu 14.04/16.04
