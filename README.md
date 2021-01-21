@@ -372,6 +372,7 @@ download headers, headers-generic, and image deb
 # disk cleanup
 
 >$ sudo apt-get clean
+
 >$ journalctl --vacuum-size=10M
 
 ```
