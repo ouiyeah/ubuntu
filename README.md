@@ -333,6 +333,8 @@ install armadillo and vlc in synaptic
 
 > python -m pip install --user spicy
 
+> sudo pip install future
+
 ***
 # upgrade linux kernel
 
