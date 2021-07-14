@@ -307,6 +307,8 @@ install mysql database if necessary
 ***
 # auto startup
 
+> sudo apt-get install gnome-screensaver
+
 ![startup_applications](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/startup_applications.png "startup_applications")
 ![edit_preferences](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/edit_preferences.png "edit_preferences")
 
@@ -334,6 +336,8 @@ install armadillo and vlc in synaptic
 > python -m pip install --user spicy
 
 > sudo pip install future
+
+> sudo pip install Shapely
 
 ***
 # upgrade linux kernel
