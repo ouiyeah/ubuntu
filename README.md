@@ -1,7 +1,7 @@
 # download iso
 
 open <http://www.ubuntu.com/download/desktop/>
-![download_iso](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/download_iso.png "download_iso")
+![download_iso](https://github.com/ouiyeah/ubuntu/master/img/download_iso.png "download_iso")
 ![download_contribute](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/download_contribute.png "download_contribute")
 
 use other software (e.g. ultraiso) to make boot disk if necessary
@@ -26,19 +26,19 @@ note that if ubuntu system was reinstalled this hostname settings page may not b
 
 set scaling factor to 2 if hi-dpi screen enabled
 
->$ gsettings set org.gnome.desktop.interface scaling-factor 2
+> gsettings set org.gnome.desktop.interface scaling-factor 2
 
 fake a virtual monitor temperarily if gui program open failed
 
->$ xrandr --newmode "hitrobot"   49.00  1024 1072 1168 1312  600 603 613 624 -hsync +vsync
+> xrandr --newmode "hitrobot"   49.00  1024 1072 1168 1312  600 603 613 624 -hsync +vsync
 
->$ xrandr --addmode VIRTUAL1 hitrobot
+> xrandr --addmode VIRTUAL1 hitrobot
 
 retry gui program (e.g. rviz) and good luck
 
 add virtual monitors for ubuntu18.04
 
->$ sudo vi /usr/share/X11/xorg.conf.d/20-intel.conf
+> sudo vi /usr/share/X11/xorg.conf.d/20-intel.conf
 
     Section "Device"
         Identifier "intelgpu0"
@@ -50,7 +50,7 @@ add virtual monitors for ubuntu18.04
 # configure network
 
 bind eth0 to staic address for legacy linux network (not recommended)
->$ sudo vi /etc/network/interfaces
+> sudo vi /etc/network/interfaces
 
     #auto lo
     #iface lo inet loopback
@@ -61,7 +61,7 @@ bind eth0 to staic address for legacy linux network (not recommended)
 
 reset eth0 to static address once for legacy linux network (not recommended)
 
->$ ifconfig eth0 [ip_address] netmask [ip_netmask] up
+> ifconfig eth0 [ip_address] netmask [ip_netmask] up
 
 add connection in network manager gui mode (recommended)
 
@@ -69,7 +69,7 @@ add connection in network manager gui mode (recommended)
 
 set connection in network manager config file (strongly recommended)
 
->$ sudo vi /etc/NetworkManager/system-connections/wifi_ssid
+> sudo vi /etc/NetworkManager/system-connections/wifi_ssid
 
     [connection]
     id=ChinaNet-ouiyeah
@@ -101,44 +101,44 @@ set connection in network manager config file (strongly recommended)
 
 remember to set the link for network connection if failed to visit websites after installation
 
->$ sudo ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
+> sudo ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
 
->$ sudo apt-get install net-tools
+> sudo apt-get install net-tools
 
->$ iwlist wlan0 scan | grep ESSID
+> iwlist wlan0 scan | grep ESSID
 
->$ sudo iw dev wlan0 scan | less
+> sudo iw dev wlan0 scan | less
 
 ***
 # remote access
 
 set remmina if it is used as terminal
 
->$ sudo apt-get install remmina
+> sudo apt-get install remmina
 
 ![remmina_client](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/remmina_client.png "remmina_client")
 ![remmina_add](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/remmina_add.png "remmina_add")
 
 set desktop sharing if it is used as host
 
->$ sudo apt-get install vino
+> sudo apt-get install vino
 
 ![desktop_sharing](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/desktop_sharing.png "desktop_sharing")
 ![desktop_settings](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/desktop_settings.png "desktop_settings")
 
 set vnc4server for connecting ubuntu from other system terminal (e.g. windows / ubuntu)
 
->$ sudo apt-get install vnc4server
+> sudo apt-get install vnc4server
 
->$ sudo apt-get install xrdp
+> sudo apt-get install xrdp
 
->$ sudo apt-get install dconf-editor
+> sudo apt-get install dconf-editor
 
 open dconf-editor and visit org > gnome > desktop > remote-access
 ![dconf_editor](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/dconf_editor.png "dconf_editor")
 uncheck the "require-encryption" attribute
 
->$ sudo vi /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+> sudo vi /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
 
 ````
 <key name='enabled' type='b'>
@@ -152,17 +152,17 @@ uncheck the "require-encryption" attribute
 </key>
 ````
 
->$ sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+> sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
->$ /usr/lib/vino/vino-server
+> /usr/lib/vino/vino-server
 
 set x11vnc for connecting odroid-ubuntu from windows
 
->$ sudo apt-get install x11vnc
+> sudo apt-get install x11vnc
 
->$ sudo apt-get install xrdp
+> sudo apt-get install xrdp
 
->$ sudo vi /etc/init/x11vnc.conf
+> sudo vi /etc/init/x11vnc.conf
 
     start on login-session-start
     script
@@ -180,34 +180,34 @@ use [teamviewer](https://www.teamviewer.com/en/download/) to fulfill remote acce
 
 reset unity if toolbar disappeared
 
->$ dconf reset -f /org/compiz/
+> dconf reset -f /org/compiz/
 
->$ setsid unity
+> setsid unity
 
 ***
 # set permissions
 
 cancel sudo password
 
->$ sudo sed -i -e "/%sudo\s*ALL=(ALL:ALL)\s*ALL/ c %sudo\tALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers
+> sudo sed -i -e "/%sudo\s*ALL=(ALL:ALL)\s*ALL/ c %sudo\tALL=(ALL:ALL) NOPASSWD:ALL" /etc/sudoers
 
 use pkexec command if sudo failed
 
->$ pkexec visudo -f /etc/sudoers
+> pkexec visudo -f /etc/sudoers
 
 save (ctrl^o + return) and exit (ctrl^x)
 
 change powerbtn event to shutdown immediately (legacy)
 
->$ sudo sed -i -e "/action=\/etc\/acpi\/powerbtn.sh/ c action=sudo /sbin/shutdown -h now" /etc/acpi/events/powerbtn
+> sudo sed -i -e "/action=\/etc\/acpi\/powerbtn.sh/ c action=sudo /sbin/shutdown -h now" /etc/acpi/events/powerbtn
 
 change powerbtn event to reset communication (current)
 
->$ sudo sed -i -e "/action=\/etc\/acpi\/powerbtn.sh/ c action=/etc/acpi/comm-reset.sh" /etc/acpi/events/powerbtn
+> sudo sed -i -e "/action=\/etc\/acpi\/powerbtn.sh/ c action=/etc/acpi/comm-reset.sh" /etc/acpi/events/powerbtn
 
->$ sudo ln -s ~/catkin_ws/comm-reset.sh /etc/acpi/comm-reset.sh
+> sudo ln -s ~/catkin_ws/comm-reset.sh /etc/acpi/comm-reset.sh
 
->$ sudo service acpid restart
+> sudo service acpid restart
 
 open dconf-editor and visit org > gnome > settings-daemon > plugins > power
 ![dconf_button](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/dconf_button.png "dconf_button")
@@ -215,94 +215,94 @@ change the "button-power" attribute to "nothing"
 
 add current user to dialout group for tty authority
 
->$ sudo usermod -aG dialout $(whoami)
+> sudo usermod -aG dialout $(whoami)
 
 create tty rule file for current user
 
->$ echo 'KERNEL=="ttyS[0-9]*", MODE="0666"' | sudo tee -a /etc/udev/rules.d/70-persistent-tty.rules
+> echo 'KERNEL=="ttyS[0-9]*", MODE="0666"' | sudo tee -a /etc/udev/rules.d/70-persistent-tty.rules
 
->$ echo 'KERNEL=="ttyUSB[0-9]*", MODE="0666"' | sudo tee -a /etc/udev/rules.d/70-persistent-tty.rules
+> echo 'KERNEL=="ttyUSB[0-9]*", MODE="0666"' | sudo tee -a /etc/udev/rules.d/70-persistent-tty.rules
 
 lookup and bind the device id
 
->$ udevadm info /dev/ttyUSB0 (e.g. USB0 ID_PATH=pci-0000:00:1a.0-usb-0:1.2:1.0)
+> udevadm info /dev/ttyUSB0 (e.g. USB0 ID_PATH=pci-0000:00:1a.0-usb-0:1.2:1.0)
 
 ![lsusb_lookup](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/lsusb_lookup.png "lsusb_lookup")
 
->$ echo 'SUBSYSTEM=="tty", ENV{ID_PATH}=="pci-0000:00:1a.0-usb-0:1.2:1.0", SYMLINK+="alias_name(e.g.)"' | sudo tee -a /etc/udev/rules.d/70-persistent-tty.rules
+> echo 'SUBSYSTEM=="tty", ENV{ID_PATH}=="pci-0000:00:1a.0-usb-0:1.2:1.0", SYMLINK+="alias_name(e.g.)"' | sudo tee -a /etc/udev/rules.d/70-persistent-tty.rules
 
 revise grub file in order to skip boot-in check if necessary
 
->$ sudo sed -i '177s/ ro / rw /' /etc/grub.d/10_linux （replace 177=>184/188 for 18.04)
+> sudo sed -i '177s/ ro / rw /' /etc/grub.d/10_linux （replace 177=>184/188 for 18.04)
 
->$ sudo update-grub
+> sudo update-grub
 
 ***
 # install softwares
 
 install google input source for ibus (or fcitx)
 
->$ sudo apt-get install ibus-googlepinyin (or fcitx-googlepinyin)
+> sudo apt-get install ibus-googlepinyin (or fcitx-googlepinyin)
 
 install basic development toolkits
 
->$ sudo apt-get install vim ssh htop cutecom setserial imagemagick
+> sudo apt-get install vim ssh htop cutecom setserial imagemagick
 
 set git config for user name and email
 
->$ sudo apt-get install git
+> sudo apt-get install git
 
->$ git config --global user.name \`hostname\`
+> git config --global user.name \`hostname\`
 
->$ git config --global user.email $USER@hitrobotgroup.com
+> git config --global user.email $USER@hitrobotgroup.com
 
->$ git config --global credential.helper store
+> git config --global credential.helper store
 
 generate ssh-key and add ~/.ssh/id_rsa.pub to github if necessary
 
->$ ssh-keygen -t rsa -C $USER@hitrobotgroup.com
+> ssh-keygen -t rsa -C $USER@hitrobotgroup.com
 
 may need to add ssh only if the system isn’t doing it for you automatically.
 
->$ ssh-add ~/.ssh/id_rsa
+> ssh-add ~/.ssh/id_rsa
 
->$ cat ~/.ssh/id_rsa.pub
+> cat ~/.ssh/id_rsa.pub
 
 install gitg for git and rapidsvn for svn
 
->$ sudo apt-get install gitg rapidsvn meld
+> sudo apt-get install gitg rapidsvn meld
 
 link git repository
 
->$ git clone https://github.com/ros-org/release
+> git clone https://github.com/ros-org/release
 
->$ git clone git@github.com:ros-org/ros_org.git
+> git clone git@github.com:ros-org/ros_org.git
 
 fix git error if necessary
 
->$ find .git/objects/ -type f -empty | xargs rm
+> find .git/objects/ -type f -empty | xargs rm
 
 link svn repository if rapidsvn is failed to get permanent certification
 
->$ svn list https://10.1.11.10/svn/LaserGPS1 (e.g.)
+> svn list https://10.1.11.10/svn/LaserGPS1 (e.g.)
 
 remove all backup~ files from svn if necessary
 
->$ find . -name *~ -exec rm {} \;
+> find . -name *~ -exec rm {} \;
 
 set "subl" and "meld" in the preference of rapidsvn
 
 install partition tools if necessary
 
->$ sudo apt-get install gparted
+> sudo apt-get install gparted
 
 install mysql database if necessary
 
->$ sudo apt-get install mysql-server
+> sudo apt-get install mysql-server
 
->$ sudo apt-get install mysql-client
+> sudo apt-get install mysql-client
 
->$ sudo apt-get install libmysqlclient-dev
+> sudo apt-get install libmysqlclient-dev
 
 ***
 # auto startup
@@ -348,28 +348,28 @@ select [linux kernel version](http://kernel.ubuntu.com/~kernel-ppa/mainline/)
 
 download headers, headers-generic, and image deb
 
->$ uname -sr
+> uname -sr
 
->$ sudo dpkg -i *.deb
+> sudo dpkg -i *.deb
 
->$ sudo reboot
+> sudo reboot
 
->$ uname -sr
+> uname -sr
 
->$ sudo cp -i iwlwifi-*.ucode /lib/firmware
+> sudo cp -i iwlwifi-*.ucode /lib/firmware
 
->$ sudo update-grub
+> sudo update-grub
 
->$ sudo reboot
+> sudo reboot
 
 ***
 # change hostname
 
->$ sudo vi /etc/hostname
+> sudo vi /etc/hostname
 
     [hostname]
 
->$ sudo vi /etc/hosts
+> sudo vi /etc/hosts
 
     127.0.0.1       localhost
     127.0.1.1       [hostname]
@@ -377,9 +377,9 @@ download headers, headers-generic, and image deb
 ***
 # disk cleanup
 
->$ sudo apt-get clean
+> sudo apt-get clean
 
->$ journalctl --vacuum-size=10M
+> journalctl --vacuum-size=10M
 
 ```
 #!/bin/bash
@@ -396,18 +396,18 @@ snap list --all | awk '/disabled/{print $1, $3}' |
 # systemback iso
 
 add apt-repository as ubuntu 14.04/16.04
->$ sudo add-apt-repository ppa:nemh/systemback
+> sudo add-apt-repository ppa:nemh/systemback
 
 add apt-repository as ubuntu 18.04 or later
->$ sudo add-apt-repository "deb http://ppa.launchpad.net/nemh/systemback/ubuntu xenial main"
+> sudo add-apt-repository "deb http://ppa.launchpad.net/nemh/systemback/ubuntu xenial main"
 
->$ sudo apt-get update && sudo apt-get install systemback unionfs-fuse
+> sudo apt-get update && sudo apt-get install systemback unionfs-fuse
 
 revise grub file in order to alter display resolution if necessary
 
->$ sudo sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/ c GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.alpha_support=1"' /etc/default/grub
+> sudo sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/ c GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.alpha_support=1"' /etc/default/grub
 
->$ sudo update-grub
+> sudo update-grub
 
 ***
 # remastersys backup (obselete)
@@ -418,24 +418,24 @@ note that remastersys should be re-installed if it is already a remastersys back
 
 change "WORKDIR" to custom directory if necessary (e.g. /home/remastersys)
 
->$ sudo nano /etc/remastersys.conf
+> sudo nano /etc/remastersys.conf
 
 do the remastersys backup
 
->$ sudo remastersys backup
+> sudo remastersys backup
 
 wait for a while and get the generated file <custom-backup.iso> at /home/remastersys/
 
 note that teminate the backup ctrl+c and do the following if the basename warning happened
 
->$ sudo apt-get remove popularity-contest
+> sudo apt-get remove popularity-contest
 
->$ sudo apt-get remove ubiquity*
+> sudo apt-get remove ubiquity*
 
->$ sudo apt-get remove remastersys
+> sudo apt-get remove remastersys
 
->$ sudo apt-get update
+> sudo apt-get update
 
->$ sudo apt-get -f install 
+> sudo apt-get -f install 
 
 use other software (e.g. ultraiso) to make boot disk if necessary
