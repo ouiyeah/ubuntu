@@ -1,7 +1,7 @@
 # download iso
 
 open <http://www.ubuntu.com/download/desktop/>
-![download_iso](https://github.com/ouiyeah/ubuntu/master/img/download_iso.png "download_iso")
+![download_iso](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/download_iso.png "download_iso")
 ![download_contribute](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/download_contribute.png "download_contribute")
 
 use other software (e.g. ultraiso) to make boot disk if necessary
