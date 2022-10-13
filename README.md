@@ -46,6 +46,42 @@ add virtual monitors for ubuntu18.04
         Option "VirtualHeads" "2"
     EndSection
 
+X11 XServer Xorg without real monitor
+
+> sudo apt install xorg-video-abi-23
+
+> sudo apt install xserver-xorg-video-dummy
+
+> sudo cp /home/leapting/xorg.conf /usr/share/X11/xorg.conf.d/
+
+sudo apt-get install xserver-xorg-input-all
+
+```
+Section "Device"
+    Identifier "DummyDevice"
+    Driver "dummy"
+    VideoRam 256000
+EndSection
+
+Section "Screen"
+    Identifier "DummyScreen"
+    Device "DummyDevice"
+    Monitor "DummyMonitor"
+    DefaultDepth 24
+    SubSection "Display"
+        Depth 24
+        Modes "1920x1080_60.0"
+    EndSubSection
+EndSection
+
+Section "Monitor"
+    Identifier "DummyMonitor"
+    HorizSync 30-70
+    VertRefresh 50-75
+    ModeLine "1920x1080" 148.50 1920 2448 2492 2640 1080 1084 1089 1125 +Hsync +Vsync
+EndSection
+```
+
 ***
 # configure network
 
