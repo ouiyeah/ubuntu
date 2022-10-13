@@ -54,7 +54,7 @@ X11 XServer Xorg without real monitor
 
 > sudo cp /home/leapting/xorg.conf /usr/share/X11/xorg.conf.d/
 
-sudo apt-get install xserver-xorg-input-all
+> sudo apt-get install xserver-xorg-input-all
 
 ```
 Section "Device"
