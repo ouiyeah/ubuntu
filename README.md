@@ -52,7 +52,7 @@ X11 XServer Xorg without real monitor
 
 > sudo apt install xserver-xorg-video-dummy
 
-> sudo cp /home/leapting/xorg.conf /usr/share/X11/xorg.conf.d/
+> sudo cp ~/xorg.conf /usr/share/X11/xorg.conf.d/
 
 > sudo apt-get install xserver-xorg-input-all
 
