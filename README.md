@@ -428,6 +428,12 @@ snap list --all | awk '/disabled/{print $1, $3}' |
     done
 ```
 
+remove drag_and drop and set bit zero if vmware
+> rm -rf ~/.cache/vmware/drag_and_drop
+
+> sudo su -c 'dd if=/dev/zero of=/zero bs=512; rm -v /zero'
+do compress in vmware settings
+
 ***
 # systemback iso
 
