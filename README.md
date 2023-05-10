@@ -482,3 +482,16 @@ note that teminate the backup ctrl+c and do the following if the basename warnin
 > sudo apt-get -f install 
 
 use other software (e.g. ultraiso) to make boot disk if necessary
+
+***
+# ubuntu boot failure
+
+> unane -r
+
+> modprobe nls iso8859-1
+
+> depmod
+
+> modprobe nls so8859-1
+
+> reboot
