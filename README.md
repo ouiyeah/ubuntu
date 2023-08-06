@@ -48,13 +48,13 @@ add virtual monitors for ubuntu18.04
 
 X11 XServer Xorg without real monitor
 
-> sudo apt install xorg-video-abi-23
+> sudo apt install xorg-video-abi-23(not recommended)
 
 > sudo apt install xserver-xorg-video-dummy
 
 > sudo cp ~/xorg.conf /usr/share/X11/xorg.conf.d/
 
-> sudo apt-get install xserver-xorg-input-all
+> sudo apt-get install xserver-xorg-input-all(not recommended)
 
 ```
 Section "Device"
