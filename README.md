@@ -233,6 +233,10 @@ use pkexec command if sudo failed
 
 save (ctrl^o + return) and exit (ctrl^x)
 
+change sudo password
+
+> sudo passwd [user]
+
 change powerbtn event to shutdown immediately (legacy)
 
 > sudo sed -i -e "/action=\/etc\/acpi\/powerbtn.sh/ c action=sudo /sbin/shutdown -h now" /etc/acpi/events/powerbtn
