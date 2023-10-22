@@ -456,36 +456,7 @@ revise grub file in order to alter display resolution if necessary
 
 > sudo update-grub
 
-***
-# remastersys backup (obselete)
-
-download [remastersys_3.0.3-1_all.deb](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/pkg/remastersys_3.0.3-1_all.deb)
-![install_remastersys](https://raw.githubusercontent.com/ouiyeah/ubuntu/master/img/install_remastersys.png "install_remastersys")
-note that remastersys should be re-installed if it is already a remastersys backup system
-
-change "WORKDIR" to custom directory if necessary (e.g. /home/remastersys)
-
-> sudo nano /etc/remastersys.conf
-
-do the remastersys backup
-
-> sudo remastersys backup
-
-wait for a while and get the generated file <custom-backup.iso> at /home/remastersys/
-
-note that teminate the backup ctrl+c and do the following if the basename warning happened
-
-> sudo apt-get remove popularity-contest
-
-> sudo apt-get remove ubiquity*
-
-> sudo apt-get remove remastersys
-
-> sudo apt-get update
-
-> sudo apt-get -f install 
-
-use other software (e.g. ultraiso) to make boot disk if necessary
+copy EFI/BOOT from origin iso to custom iso in boot disk
 
 ***
 # ubuntu boot failure
