@@ -474,3 +474,24 @@ copy EFI/BOOT from origin iso to custom iso in boot disk
 > modprobe nls so8859-1
 
 > reboot
+
+***
+# gitlab
+
+> sudo apt-get install curl openssh-server ca-certificates postfix
+
+press the Tab key to go to the "OK" button, and then press Enter
+
+> curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh |sudo bash
+
+> sudo apt-get install gitlab-ce
+
+open the file/etc/gitlab/gitlab.rb, and at approximately line 32, change the domain name for external access
+
+> sudo gitlab-ctl stop
+> sudo gitlab-ctl reconfigure
+> sudo gitlab-ctl restart
+> sudo gitlab-ctl start
+
+user: root
+passwd: /etc/gitlab/initial_root_password
