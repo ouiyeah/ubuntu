@@ -519,3 +519,4 @@ passwd: /etc/gitlab/initial_root_password
 
 > sudo docker run -v /home/ouiyeah/bag:/home/ros/Desktop -p 6901:6901 shreyasgokhale/gc-ros-gazebo-vnc
 
+default passwd: vncpassword
