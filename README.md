@@ -379,6 +379,8 @@ install armadillo and vlc in synaptic
 
 > sudo pip install Shapely
 
+> sudo pip install opencv-contrib-python
+
 alternative use python2.7 or python3 if necessary
 
 > sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
