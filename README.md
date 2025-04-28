@@ -298,7 +298,7 @@ set git config for user name and email
 
 > git config --global credential.helper store
 
-> git config --global --unset credential.helper
+> rm ~/.git-credentials
 
 generate ssh-key and add ~/.ssh/id_rsa.pub to github if necessary
 
