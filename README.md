@@ -30,9 +30,9 @@ set scaling factor to 2 if hi-dpi screen enabled
 
 fake a virtual monitor temperarily if gui program open failed
 
-> xrandr --newmode "hitrobot"   49.00  1024 1072 1168 1312  600 603 613 624 -hsync +vsync
+> xrandr --newmode "leapting"   49.00  1024 1072 1168 1312  600 603 613 624 -hsync +vsync
 
-> xrandr --addmode VIRTUAL1 hitrobot
+> xrandr --addmode VIRTUAL1 leapting
 
 retry gui program (e.g. rviz) and good luck
 
@@ -294,13 +294,13 @@ set git config for user name and email
 
 > git config --global user.name \`hostname\`
 
-> git config --global user.email $USER@hitrobotgroup.com
+> git config --global user.email $USER@leapting.com
 
 > git config --global credential.helper store
 
 generate ssh-key and add ~/.ssh/id_rsa.pub to github if necessary
 
-> ssh-keygen -t rsa -C $USER@hitrobotgroup.com
+> ssh-keygen -t rsa -C $USER@leapting.com
 
 may need to add ssh only if the system isn’t doing it for you automatically.
 
