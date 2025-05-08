@@ -296,6 +296,8 @@ set git config for user name and email
 
 > git config --global user.email $USER@qq.com
 
+> git config --global merge.tool meld
+
 > git config --global credential.helper store
 
 > rm ~/.git-credentials
