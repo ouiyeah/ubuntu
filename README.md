@@ -237,6 +237,10 @@ change sudo password
 
 > sudo passwd [user]
 
+change keyring, such as vscode
+
+> rm ~/.local/share/keyrings/login.keyring
+
 change powerbtn event to shutdown immediately (legacy)
 
 > sudo sed -i -e "/action=\/etc\/acpi\/powerbtn.sh/ c action=sudo /sbin/shutdown -h now" /etc/acpi/events/powerbtn
