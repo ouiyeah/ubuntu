@@ -366,6 +366,10 @@ edit the startup program command as follow if running ros file before calling .b
 
 > gnome-terminal -- setsid /usr/lib/vino/vino-server
 
+open startup application with orin
+
+> gnome-session-properties
+
 ***
 # python pip
 
